@@ -9,7 +9,9 @@ namespace FlipMania
     class Program
     {
 
-        Random rng = new Random();
+        static Random rng = new Random();
+        static int numberOfHeads = 0;
+        static int numberOfTails = 0;
 
         static void Main(string[] args)
         {
@@ -17,13 +19,21 @@ namespace FlipMania
 
         public static void FlipCoins(int numberOfFlips)
         {
-            int numberOfHeads = 0;
-            int numberOfTails = 0;
-
             for (int i = 0; i <= numberOfFlips; i++)
             {
-                
+                if (rng.Next(0, 2) == 0)
+                {
+                    numberOfHeads++;
+                }
+                else
+                {
+                    numberOfTails++;
+                }
             }
+
+            Console.WriteLine("We flipped a coin " + numberOfFlips + " times.");
+            Console.WriteLine("Number of Heads: " + numberOfHeads);
+            Console.WriteLine("Number of tails: " + numberOfTails);
         }
 
     }
