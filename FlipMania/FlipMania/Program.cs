@@ -16,13 +16,17 @@ namespace FlipMania
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Flips a coin 'numberOfFlips' times and keeps track of heads and tails, then prints the results to the console.
+        /// </summary>
+        /// <param name="numberOfFlips">Number of Flips</param>
         public static void FlipCoins(int numberOfFlips)
         {
             Random rng = new Random();
             int numberOfHeads = 0;
             int numberOfTails = 0;
 
-            for (int i = 0; i <= numberOfFlips; i++)
+            for (int i = 0; i < numberOfFlips; i++)
             {
                 if (rng.Next(0, 2) == 0)
                 {
@@ -39,6 +43,10 @@ namespace FlipMania
             Console.WriteLine("Number of tails: " + numberOfTails);
         }
 
+        /// <summary>
+        /// Flips until 'numberOfHeads', counts number of flips and writes results to console
+        /// </summary>
+        /// <param name="numberOfHeads">Number of heads needed</param>
         public static void FlipForHeads(int numberOfHeads)
         {
             Random rng = new Random();
